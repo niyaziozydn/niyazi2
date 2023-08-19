@@ -30,6 +30,9 @@ class Todo(models.Model):
     posta= models.CharField(max_length=200)
     website=models.CharField(max_length=200)
     avatar = models.ImageField(upload_to='avatar')
+    Latitude = models.FloatField(max_length=250,null=True,blank=True)
+    Longitude = models.FloatField(max_length=250,null=True,blank=True)
+    
 
 class Contact(models.Model):
     name=models.CharField(max_length=250)

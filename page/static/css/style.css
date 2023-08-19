@@ -970,14 +970,14 @@ button#sidebarCollapse {
 
 .feature_box:hover,
 .feature_box:focus {
-    background: #fc301e;
+    background: #1bc354;
 }
 
 .feature_box:hover h4,
 .feature_box:focus h4,
 .feature_box:hover p,
 .feature_box:focus p {
-    color: #fff;
+    color: #2699d2;
 }
 
 .feature_box:hover img.default-block,
@@ -1910,7 +1910,7 @@ p.count-text {
 }
 
 .submit-button .btn-common {
-    background-color: #f2184f;
+    background-color: #1ac051;
     height: 45px;
     line-height: 45px;
     font-size: 14px;
@@ -1950,7 +1950,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .help-block ul li {
-    color: red;
+    color: #1ac051;
 }
 
 .menu_footer li a {
@@ -1969,7 +1969,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .footer-box {
-    background: #262e41;
+    background: #2598d1;
     padding: 70px 0;
 }
 
@@ -2370,7 +2370,7 @@ ul.social_icon li {
 }
 
 .dark_blue_layout {
-    background: #262e41;
+    background: #2598d1;
 }
 
 .readmore_bt {
@@ -2402,7 +2402,7 @@ ul.social_icon li {
 }
 
 .footer_bottom {
-    background: #0f1521;
+    background: #2598d1;
     padding: 0 0;
     width: 100%;
     min-height: 60px;
@@ -2460,7 +2460,7 @@ ul.social_icon li {
 }
 
 .newsletter_form button {
-    background: #d66c0b;
+    background: #1ac051;
     color: #fff;
     border: none;
     font-size: 14px;
@@ -2626,7 +2626,7 @@ ul.bottom_menu li {
 }
 
 .top-header.fixed-menu .search-btn {
-    background: #111;
+    background: #2598d1;
 }
 
 .top-header.fixed-menu .search-btn img {
@@ -2636,7 +2636,7 @@ ul.bottom_menu li {
 .top-header.fixed-menu .search-box:hover .search-txt {
     width: 240px;
     padding: 0 10px;
-    border: solid #000 1px;
+    border: solid #2598d1 1px;
     height: 41px;
 }
 
@@ -2741,8 +2741,8 @@ ul.bottom_menu li {
     left: -301px;
     height: 100vh;
     z-index: 999;
-    background: #fff;
-    color: #fff !important;
+    background: #2396cf;
+    color: #1ac051 !important;
     transition: all 0.3s;
 }
 
@@ -2901,7 +2901,7 @@ form.news_submit_form .field button {
     border: none;
     float: left;
     margin: 0;
-    background: #ef4023;
+    background: #1ac051;
     color: #fff;
     font-size: 18px;
     font-weight: 400;
@@ -2994,4 +2994,11 @@ footer.footer-box .heading_main h2 {
 .inner_page .top-header {
     position: relative;
     padding-bottom: 25px;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
 }

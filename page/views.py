@@ -1,12 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Todo , Category, Contact
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 
-# Create your views here.
 
 
 
@@ -22,30 +21,34 @@ def home_view(request):
         contact.email=email
         contact.subject=subject
         contact.save()
-
-
-
-
-
-
-
-
-
-
-
     todos = Todo.objects.all()
+ 
+    
+        
+
+
 
     sorgu = request.GET.get('sorgu')
-
     if sorgu:
         todos = todos.filter(
-            Q(title__icontains=sorgu) | Q(sehir__icontains=sorgu),
+            Q(title__icontains=sorgu) | Q(sehir__icontains=sorgu),  # icontains içinde geçen contains direk eşit olan 
         ).distinct()
+    else:
+        paginator=Paginator(todos,4)
+        page_num=request.GET.get('page',1)
+        todos=paginator.page(page_num)
     allcategory= Category.objects.all()
 
+    
+    
+
+    
+   
+
     context = dict(
-        todos = todos.filter(is_active=True),
+        todos = todos,
         allcategory=allcategory,
+       
     )
 
 
@@ -74,5 +77,6 @@ def category_detail(request, category_slug):
         category = category,
     )
     return render(request,'page/search_kat.html',context)
+
 
 

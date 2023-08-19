@@ -1,0 +1,16 @@
+{% if todos.has_other_pages %}
+<!-- Pagination -->
+<nav class="">
+    <ul class="pagination">
+        {% if todos.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{todos.previous_page_number}}">Geri</a></li>
+        {% endif %} {% for i in todos.paginator.page_range %} {% if todos.number == i %}
+        <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+        {% endif %} {% endfor %} {% if todos.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{todos.next_page_number}}">İleri</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
