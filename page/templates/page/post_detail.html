@@ -2,6 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
+<!-- LOADER -->
+{% block x %} {% include 'page/navbar.html'%} {% endblock %}
+
+
 
 <head>
     <meta charset="utf-8">
@@ -32,170 +36,125 @@
       <![endif]-->
 </head>
 
-<body id="about" class="inner_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
-    <!-- LOADER -->
-    <div id="preloader">
-        <div class="loader">
-            <img src="{% static 'images/loader.gif' %}" alt="#" />
+
+<div class="section about_section layout_padding dash_bg">
+    <div class="container">
+        <div class="row">
+
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                <div class="full feature_box">
+
+                    <div class="full">
+                        <i class="fa-regular fa-hand-pointer fa-2xl"></i>
+                        <h4>WebSite</h4>
+                    </div>
+                    <div class="full">
+                        <p>{{todo.website}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                <div class="full feature_box">
+
+                    <div class="full">
+                        <i class="fa-solid fa-location-arrow fa-2xl "></i>
+                        <h4>Konum</h4>
+                    </div>
+                    <div class="full">
+                        <p>{{todo.ulke}},{{todo.sehir}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                <div class="full feature_box">
+
+                    <div class="full">
+                        <i class="fa-solid fa-play fa-2xl"></i>
+                        <h4>Kategori</h4>
+                    </div>
+                    <div class="full">
+                        <p>{{todo.category}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                <div class="full feature_box">
+                    <img src="{{todo.avatar|thumbnail_url:'avatar'}}">
+
+
+
+                </div>
+            </div>
+
         </div>
     </div>
-    <!-- END LOADER -->
-    <div class="wrapper">
-        <nav id="sidebar">
-            <div class="menu_section">
-                <ul>
-                    <li><a href="{% url 'home_view' %}">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a id="anchor-name">Contact us</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div id="content">
-            <!-- Start header -->
-            <header class="top-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="heading_main text_align_center margin-bottom_30 ">
-                                <h2><br>FIREEXPLORE</h2>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><img src="{% static 'images/menu_icon.png' %} "></button>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <!-- End header -->
-            <!-- Start Banner -->
-            <!-- section -->
-            <div class="section about_section layout_padding dash_bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="full">
-                                <div class="heading_main text_align_center">
-                                    <h2>{{todo.title}}</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-                            <div class="full feature_box">
+</div>
+<!-- end section -->
+<!-- section -->
+<div class="section about_section layout_padding padding_top_0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="full">
 
-                                <div class="full">
-                                    <i class="fa-regular fa-hand-pointer fa-2xl"></i>
-                                    <h4>WebSite</h4>
-                                </div>
-                                <div class="full">
-                                    <p>{{todo.website}}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-                            <div class="full feature_box">
-
-                                <div class="full">
-                                    <i class="fa-solid fa-location-arrow fa-2xl "></i>
-                                    <h4>Konum</h4>
-                                </div>
-                                <div class="full">
-                                    <p>{{todo.ulke}},{{todo.sehir}}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-                            <div class="full feature_box">
-
-                                <div class="full">
-                                    <i class="fa-solid fa-play fa-2xl"></i>
-                                    <h4>Kategori</h4>
-                                </div>
-                                <div class="full">
-                                    <p>{{todo.category}}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-                            <div class="full feature_box">
-                                <img src="{{todo.avatar|thumbnail_url:'avatar'}}">
-
-
-
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
             </div>
-            <!-- end section -->
-            <!-- section -->
-            <div class="section about_section layout_padding padding_top_0">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="full">
-                                <div class="heading_main text_align_center">
-                                    <h2 class="margin-bottom_30"><strong class="small theme_color">{{todo.title}}</strong><br>DEMO</h2>
-                                </div>
-                            </div>
-                        </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="full">
+                    <div class="heading_small">
+                        <h4>{{todo.title}}</h4>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                            <div class="full">
-                                <div class="heading_small">
-                                    <h4>{{todo.title}}</h4>
-                                </div>
-                                <p>DEMODEMObyDEMObyDEMObyDEMObyDEMObyDEMObyDEMObyDEMObyDEMObyDEMObyDEMObyDEMObyby injected humour, or randomised words which don't look even slightly believable. If you are going to use a pass<br><br>age oDEMObyDEMObyDEMObyDEMObyDEMObyDEMObyDEMObyLorem
-                                    Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look DEMObyDEMObyDEMObyDEMObyDEMObyDEMObyeed to be sure there isn</p>
-                            </div>
-                            <div class="full margin-top_30">
-                                <a class="readmore_bt" href="{% url 'home_view'%}"> Home </a>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                            <div class="full text_align_center">
-                                <img class="img-responsive" src="{% static 'images/maps.jpeg' %}" alt="#" />
-                            </div>
-                        </div>
-                    </div>
+                    <p>DEMODEMObyDEMObyDEMObyDEMObyDEMObyDEMObyDEMObyDEMObyDEMObyDEMObyDEMObyDEMObyby injected humour, or randomised words which don't look even slightly believable. If you are going to use a pass<br><br>age oDEMObyDEMObyDEMObyDEMObyDEMObyDEMObyDEMObyLorem
+                        Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look DEMObyDEMObyDEMObyDEMObyDEMObyDEMObyeed to be sure there isn</p>
                 </div>
-
+                <div class="full margin-top_30">
+                    <a class="readmore_bt" href="{% url 'home_view'%}"> Home </a>
+                </div>
             </div>
-            {% block content%} {% include 'page/footer.html'%} {% endblock%}
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="full text_align_center">
+                    <img class="img-responsive" src="{% static 'images/maps.jpeg' %}" alt="#" />
+                </div>
+            </div>
+        </div>
+    </div>
 
-            <!-- ALL JS FILES -->
-            <script src="{% static 'js/jquery.min.js'%} "></script>
-            <script src="{% static 'js/popper.min.js'%} "></script>
-            <script src="{% static 'js/bootstrap.min.js'%} "></script>
-            <!-- ALL PLUGINS -->
-            <script src="{% static 'js/jquery.magnific-popup.min.js'%} "></script>
-            <script src="{% static 'js/jquery.pogo-slider.min.js'%} "></script>
-            <script src="{% static 'js/slider-index.js'%} "></script>
-            <script src="{% static 'js/smoothscroll.js'%} "></script>
-            <script src="{% static 'js/form-validator.min.js'%} "></script>
-            <script src="{% static 'js/contact-form-script.js'%} "></script>
-            <script src="{% static 'js/isotope.min.js'%} "></script>
-            <script src="{% static 'js/images-loded.min.js'%} "></script>
-            <script src="{% static 'js/custom.js'%} "></script>
-            <script src="https://kit.fontawesome.com/2ded6a6094.js" crossorigin="anonymous"></script>
+</div>
+{% block content%} {% include 'page/footer.html'%} {% endblock%}
 
-            <!-- End Google Map -->
-            <script>
-                $(document).ready(function() {
-                    $('#sidebarCollapse').on('click', function() {
-                        $('#sidebar, #content').toggleClass('active');
-                        $('.collapse.in').toggleClass('in');
-                        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-                    });
-                });
-            </script>
-            <!-- google map js -->
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap "></script>
-            <!-- end google map js -->
+<!-- ALL JS FILES -->
+<script src="{% static 'js/jquery.min.js'%} "></script>
+<script src="{% static 'js/popper.min.js'%} "></script>
+<script src="{% static 'js/bootstrap.min.js'%} "></script>
+<!-- ALL PLUGINS -->
+<script src="{% static 'js/jquery.magnific-popup.min.js'%} "></script>
+<script src="{% static 'js/jquery.pogo-slider.min.js'%} "></script>
+<script src="{% static 'js/slider-index.js'%} "></script>
+<script src="{% static 'js/smoothscroll.js'%} "></script>
+<script src="{% static 'js/form-validator.min.js'%} "></script>
+<script src="{% static 'js/contact-form-script.js'%} "></script>
+<script src="{% static 'js/isotope.min.js'%} "></script>
+<script src="{% static 'js/images-loded.min.js'%} "></script>
+<script src="{% static 'js/custom.js'%} "></script>
+<script src="https://kit.fontawesome.com/2ded6a6094.js" crossorigin="anonymous"></script>
+
+<!-- End Google Map -->
+<script>
+    $(document).ready(function() {
+        $('#sidebarCollapse').on('click', function() {
+            $('#sidebar, #content').toggleClass('active');
+            $('.collapse.in').toggleClass('in');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+    });
+</script>
+<!-- google map js -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap "></script>
+<!-- end google map js -->
 </body>
 
 </html>

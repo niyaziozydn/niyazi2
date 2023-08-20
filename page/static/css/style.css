@@ -466,12 +466,6 @@ a.join_bt:focus {
     padding: 25px 0 0;
 }
 
-.top-header .navbar {
-    padding: 0;
-    min-height: 60px;
-    float: left;
-}
-
 .top-header {
     position: absolute;
     top: 0px;
@@ -494,41 +488,6 @@ a.join_bt:focus {
 .ulockd-home-slider {
     float: left;
     width: 100%;
-}
-
-.top-header .navbar .navbar-collapse ul li a {
-    text-transform: none;
-    font-size: 17px;
-    padding: 10px 25px;
-    font-weight: 400;
-    overflow: hidden;
-    color: #000;
-    position: relative;
-    z-index: 2;
-}
-
-a.navbar-brand {
-    left: 35px;
-    position: relative;
-}
-
-.top-header .navbar .navbar-collapse ul li a.active {
-    background: transparent;
-    color: #fff;
-}
-
-.top-header .navbar .navbar-collapse ul li a:hover,
-.top-header .navbar .navbar-collapse ul li a:focus {
-    background: transparent;
-    color: #fff;
-}
-
-.search_icon.nav-link img {
-    width: 25px;
-}
-
-.top-header .navbar .navbar-collapse ul li {
-    margin: 0 2px;
 }
 
 .top-header.fixed-menu {
@@ -561,48 +520,6 @@ a.navbar-brand {
     height: 60px;
     position: absolute;
     top: 0;
-}
-
-.navbar-toggler {
-    border: 2px solid #fff;
-    border-radius: 0;
-    margin: 15px 0;
-    padding: 8px 8px;
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-    transition: all 0.2s linear;
-    z-index: 9;
-    position: relative;
-}
-
-.navbar-toggler span {
-    background: #fff;
-    display: block;
-    width: 22px;
-    height: 2px;
-    margin: 0 auto;
-    margin-top: 0px;
-    margin-top: 0px;
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 1px;
-    border-radius: 1px;
-    -webkit-transition: all 0.2s linear;
-    -moz-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-    transition: all 0.2s linear;
-}
-
-.navbar-toggler span+span {
-    margin-top: 5px;
-}
-
-.navbar-toggler:hover {
-    border: 2px solid #222;
-}
-
-.navbar-toggler:hover span {
-    background: #222;
 }
 
 
@@ -2134,15 +2051,11 @@ p {
 }
 
 .layout_padding2 {
-    padding-top: 90px;
-    padding-bottom: 90px;
-    margin: auto;
-    padding: 90px;
-    padding-top: 40px;
     padding-left: 20px;
-    margin-left: 400px;
-    background-size: 50% auto;
-    width: 70%;
+    padding-right: 50px;
+    background-size: 70%;
+    width: 100%;
+    height: 5px;
 }
 
 .heading_main h2 {
@@ -2155,6 +2068,8 @@ p {
     position: relative;
     text-transform: uppercase;
     line-height: 45px !important;
+    padding-right: 30px;
+    padding-left: 80px;
 }
 
 .heading_main h2 span {
@@ -2723,21 +2638,6 @@ ul.bottom_menu li {
 
 /** sidebar **/
 
-.navbar {
-    padding: 15px 10px;
-    background: #fff;
-    border: none;
-    border-radius: 0;
-    margin-bottom: 40px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-btn {
-    box-shadow: none;
-    outline: none !important;
-    border: none;
-}
-
 .line {
     width: 100%;
     height: 1px;
@@ -2946,6 +2846,7 @@ form.news_submit_form .field2 button {
     position: relative;
     transition: ease all 0.4s;
     overflow: hidden;
+    padding-left: 80px;
 }
 
 .hover_workblog {
@@ -3036,4 +2937,9 @@ footer.footer-box .heading_main h2 {
     padding: 8px 16px;
     text-decoration: none;
     padding-left: 90px;
+}
+
+hr.new5 {
+    border: 10px solid #2596be;
+    border-radius: 5px;
 }
