@@ -2058,6 +2058,7 @@ p {
 
 .text_align_center {
     text-align: center;
+    padding-left: 50px;
 }
 
 .text_align_right {
@@ -2127,6 +2128,21 @@ p {
 .layout_padding {
     padding-top: 90px;
     padding-bottom: 90px;
+    margin: auto;
+    padding: 90px;
+    padding-top: 40px;
+}
+
+.layout_padding2 {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    margin: auto;
+    padding: 90px;
+    padding-top: 40px;
+    padding-left: 20px;
+    margin-left: 400px;
+    background-size: 50% auto;
+    width: 70%;
 }
 
 .heading_main h2 {
@@ -2233,7 +2249,7 @@ h3.small_heading {
 }
 
 .margin-top_30 {
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .margin-bottom_10 {
@@ -2900,12 +2916,30 @@ form.news_submit_form .field button {
     width: 210px;
     border: none;
     float: left;
-    margin: 0;
-    background: #1ac051;
-    color: #fff;
+    margin: 5px;
+    background: #2598d1;
+    color: #ffffff;
     font-size: 18px;
     font-weight: 400;
     cursor: pointer;
+}
+
+form.news_submit_form .field2 button {
+    display: inline-block;
+    background-color: #2598d1;
+    padding: 20px;
+    height: 30px;
+    width: 170px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 5px;
+    border: 15px double #cccccc;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    /* add this line */
+    margin: 5px;
+    /* add this line */
 }
 
 .work_blog {
@@ -3001,4 +3035,5 @@ footer.footer-box .heading_main h2 {
     float: left;
     padding: 8px 16px;
     text-decoration: none;
+    padding-left: 90px;
 }

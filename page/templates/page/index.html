@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -22,6 +23,9 @@
     <link rel="stylesheet" href="{% static 'css/pogo-slider.min.css' %}" />
     <!-- Site CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}" />
+
+
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
     <!-- Custom CSS -->
@@ -32,8 +36,13 @@
       <![endif]-->
 </head>
 
-{% block x %} {% include 'page/navbar.html'%} {% endblock %}
+{% for msg in messages %}
+<div class="alert alert-success" role="alert">
+    {{ msg }}
+</div>
+{% endfor %} {% block x %} {% include 'page/navbar.html'%} {% endblock %}
 <!-- section -->
+
 <div class="section about_section layout_padding dash_bg">
     <div class="container">
         <div class="row">
@@ -67,10 +76,11 @@
                             <h4>{{ todo.title}}</h4>
                     </div>
                     <div class="full ">
-                        <p>{{todo.website}}</p>
-                        <p>{{todo.sehir}} - {{todo.ulke}}</p>
+                        <p>
+                            <a target="_blank" href="{todo.website.url_field}"><i class="fa-regular fa-hand-pointer"></i>{{todo.website}}</a></p>
+                        <p><i class="fa-solid fa-location-arrow"></i>{{todo.sehir}} - {{todo.ulke}}</p>
 
-                        <p>{{todo.category}}</p>
+                        <p><i class="fa-solid fa-play"></i>{{todo.category}}</p>
 
 
                     </div>
@@ -119,89 +129,114 @@
                 <div class="col-md-12 col-lg-4">
                     <div class="full">
                         <div class="heading_main text_align_left" style="margin-bottom: 0;">
-                            <h2><strong class="small"> </strong><br>Firexplore</h2>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-8">
                     <div class="full">
-                        <div class="form_section">
-
+                        <div class="full">
+                            <div class="heading_main text_align_left" style="margin-bottom: 0;">
+                                <h2><strong class="small">FIRE</strong><br>EXPLORE</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="section about_section layout_padding padding_top_0 ">
-        <div class="container ">
-            <div class="row ">
-                <div class="col-md-12 ">
-                    <div class="full ">
-                        <div class="heading_main text_align_center margin-bottom_30 ">
-                            <h2><strong class="small theme_color ">Previous Projects</strong><br>Our Case Studies</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-10 offset-lg-1 ">
-                    <div class="full text_align_center ">
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use
-                            a passage of Lorem Ipsum, you need to be sure there isn'</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row ">
-                <div class="col-md-12 ">
-                    <div class="full text_align_center ">
-                        <img class="img-responsive " src="{% static 'images/arama-motoru-nedir.jpg' %} " alt="# " />
-                    </div>
 
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end section -->
-
-    <!-- end section -->
-
-    <!-- section -->
-
-    <div class="section contact_section ">
-
-        <div class="container-fluid ">
-            <div class="full text_align_center ">
-                <img id="anchor-name" class="img-responsive " src="{% static 'images/contact_us.jpeg' %} " alt="# " />
-            </div>
-            <div class="col-md-6 theme_color_bg fc3726 padding_0 ">
+</div>
+<div class="section about_section layout_padding padding_top_0 ">
+    <div class="container ">
+        <div class="row ">
+            <div class="col-md-12 ">
                 <div class="full ">
-                    <div class="col-sm-6 col-md-10 offset-lg-1 ">
-                        <div class="full contact_form ">
-                            <form method="POST">
-                                {% csrf_token %}
+                    <div class="heading_main text_align_center margin-bottom_30 ">
+                        <h2><strong class="small theme_color ">Previous Projects</strong><br>Our Case Studies</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10 offset-lg-1 ">
+                <div class="full text_align_center ">
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage
+                        of Lorem Ipsum, you need to be sure there isn'</p>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-12 ">
+                <div class="full text_align_center ">
+                    <img class="img-responsive " src="{% static 'images/arama-motoru-nedir.jpg' %} " alt="# " />
+                </div>
 
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">Name</label>
-                                    <input name="name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Your name...">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput1">E-mail</label>
-                                    <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Your email address...">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Message</label>
-                                    <textarea name="subject" type="subject" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="What's on your mind..."></textarea>
-                                </div>
-
-                                <button type="submit" class="btn btn-secondary">Submit</button>
-                            </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end section -->
+<div class="section dark_blue_layout white_fonts layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-4">
+                <div class="full">
+                    <div class="heading_main text_align_left" style="margin-bottom: 0;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-8">
+                <div class="full">
+                    <div class="full">
+                        <div class="heading_main text_align_left" style="margin-bottom: 0;">
+                            <h2><strong class="small">LOGO</strong><br>LOGO</h2>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+</div>
+
+<!-- end section -->
+
+<!-- section -->
+
+<div class="section contact_section ">
+
+    <div class="container-fluid ">
+        <div class="full text_align_center ">
+            <img id="anchor-name" class="img-responsive " src="{% static 'images/contact_us.jpeg' %} " alt="# " />
+        </div>
+        <div class="col-md-6 theme_color_bg fc3726 padding_0 ">
+            <div class="full ">
+                <div class="col-sm-6 col-md-10 offset-lg-1 ">
+                    <div class="full contact_form ">
+                        <form method="POST">
+                            {% csrf_token %}
+
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Name</label>
+                                <input name="name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Your name...">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">E-mail</label>
+                                <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Your email address...">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Message</label>
+                                <textarea name="subject" type="subject" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="What's on your mind..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-secondary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </div>
 </div>
@@ -224,6 +259,7 @@
 <script src="{% static 'js/isotope.min.js'%} "></script>
 <script src="{% static 'js/images-loded.min.js'%} "></script>
 <script src="{% static 'js/custom.js'%} "></script>
+<script src="https://kit.fontawesome.com/2ded6a6094.js" crossorigin="anonymous"></script>
 <!-- End Google Map -->
 <script>
     $(document).ready(function() {

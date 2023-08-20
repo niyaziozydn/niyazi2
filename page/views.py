@@ -4,6 +4,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.contrib import messages
+import folium
 
 
 
@@ -21,6 +23,7 @@ def home_view(request):
         contact.email=email
         contact.subject=subject
         contact.save()
+        messages.success(request, "Form Başariyla Gönderildi")
     todos = Todo.objects.all()
  
     
@@ -34,7 +37,7 @@ def home_view(request):
             Q(title__icontains=sorgu) | Q(sehir__icontains=sorgu),  # icontains içinde geçen contains direk eşit olan 
         ).distinct()
     else:
-        paginator=Paginator(todos,4)
+        paginator=Paginator(todos,8)
         page_num=request.GET.get('page',1)
         todos=paginator.page(page_num)
     allcategory= Category.objects.all()
@@ -58,8 +61,14 @@ def home_view(request):
 
 def post_detail(request,id):
     todo = get_object_or_404(Todo,pk=id)
+    lat = 40.7128  # Örnek bir enlem değeri (New York City)
+    lon = -74.0060  # Örnek bir boylam değeri (New York City)
+    map = folium.Map(location=[lat, lon], zoom_start=12)
+    folium.Marker([lat, lon], popup='Sample Location').add_to(map)
+
     context= dict(
-        todo=todo
+        todo=todo,
+        
     )
     return render(request,"page/post_detail.html",context)
 

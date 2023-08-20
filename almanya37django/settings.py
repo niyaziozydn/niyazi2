@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'fontawesomefree',
     'phonenumber_field',
+    
 ]
 
 MIDDLEWARE = [

@@ -11,6 +11,16 @@ from autoslug import AutoSlugField
 
 # Create your models here.
 
+
+
+
+
+
+
+
+
+
+
 class Category(models.Model):
     title = models.CharField(max_length=200)
     slug = AutoSlugField(populate_from='title', unique=True)
