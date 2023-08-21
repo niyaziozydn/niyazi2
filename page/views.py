@@ -9,9 +9,6 @@ import folium
 
 
 
-
-
-
 def home_view(request):
 
     if request.method=="POST":

@@ -8,11 +8,14 @@ class TodoAdmin(admin.ModelAdmin):
         'title',
         'is_active',
         'category',
+        'ulke'
+        
     ]
     list_display_links = [
         'pk',
         'title',
         'category',
+        'ulke',
     ]
 admin.site.register(Todo,TodoAdmin)
 

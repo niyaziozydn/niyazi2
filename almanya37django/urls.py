@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from page.views import home_view,post_detail, category_detail
+from page.searchviews import postaview, eczaneview, countrykonum_view, phonesearch_view
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -27,6 +28,12 @@ urlpatterns = [
 
     path('todo/<int:id>/',post_detail, name='post_detail'),
     path('category/<slug:category_slug>/',category_detail, name='category_detail'),
+    path('postsearch/',postaview, name='postaview'),
+    path('eczane/',eczaneview, name='eczaneview'),
+    path('countrysearch/',countrykonum_view,name='countrykonum_view'),
+    path('phonesearch/',phonesearch_view,name='phonesearch_view')
+
+
 
 
   

@@ -81,7 +81,6 @@
 
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 ">
                 <div class="full feature_box">
-                    <a href="{% url 'post_detail' id=todo.pk%}"><img class="default-block" src="{% static 'images/icon_1.png'%}" /> </a>
                     <a href="{% url 'post_detail' id=todo.pk%}"><img class="default-none " src="{% static 'images/icon_1w.png'%}" /></a>
                     <div class="full ">
                         <a href="{% url 'post_detail' id=todo.pk%}">
@@ -102,10 +101,8 @@
                     </div>
                 </div>
             </div>
-
-            {% endfor %}
-
-        </div>
+            {% empty %}
+            <p>Hiç bir yer bulunamadı</p> {% endfor %} </div>
         <br>
         <br>
 
