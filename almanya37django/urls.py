@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from page.views import home_view,post_detail, category_detail
+from page.views import home_view,post_detail, category_detail, contact, about_view
 from page.searchviews import postaview, eczaneview, countrykonum_view, phonesearch_view
 
 from django.conf import settings
@@ -31,7 +31,9 @@ urlpatterns = [
     path('postsearch/',postaview, name='postaview'),
     path('eczane/',eczaneview, name='eczaneview'),
     path('countrysearch/',countrykonum_view,name='countrykonum_view'),
-    path('phonesearch/',phonesearch_view,name='phonesearch_view')
+    path('phonesearch/',phonesearch_view,name='phonesearch_view'),
+    path('contact/',contact,name='contact'),
+    path('about/',about_view,name="about_view")
 
 
 

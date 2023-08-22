@@ -136,8 +136,7 @@ MEDIA_ROOT = BASE_DIR / 'media_files'
 
 THUMBNAIL_ALIASES = {
     '': {
-        'avatar': {'size': (184, 184), 'crop': True},
-        'avatar2x': {'size': (60, 60), 'crop': True},
+        'avatar': {'size': (600, 400), 'crop': True},
         'thumbnail': {'size': (184, 184), 'crop': True},
         'page': {'size': (1500, 300), 'crop': True},
     },

@@ -8,7 +8,17 @@ from django.contrib import messages
 import folium
 
 def postaview(request):
-
+    if request.method=="POST":
+        contact=Contact()
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        subject=request.POST.get('subject')
+        contact.name=name
+        contact.email=email
+        contact.subject=subject
+        contact.save()
+        messages.success(request, "Form Başariyla Gönderildi")
+        return redirect('home_view')
     todos = Todo.objects.all()
 
     sorgu_posta = request.GET.get('sorgu_posta')
@@ -31,6 +41,18 @@ def postaview(request):
 
 
 def eczaneview(request):
+    if request.method=="POST":
+        contact=Contact()
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        subject=request.POST.get('subject')
+        contact.name=name
+        contact.email=email
+        contact.subject=subject
+        contact.save()
+        messages.success(request, "Form Başariyla Gönderildi")
+        return redirect('home_view')
+    
     todos = Todo.objects.filter(category=Category.objects.get(title="Eczane"))
 
     sorgu_cezane = request.GET.get('sorgu_eczane')
@@ -51,7 +73,17 @@ def eczaneview(request):
     return render(request,'page/search_types/eczane.html',context)
 
 def countrykonum_view(request):
-    
+    if request.method=="POST":
+        contact=Contact()
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        subject=request.POST.get('subject')
+        contact.name=name
+        contact.email=email
+        contact.subject=subject
+        contact.save()
+        messages.success(request, "Form Başariyla Gönderildi")
+        return redirect('home_view')
     todos = Todo.objects.all()
 
     sorgu_konum = request.GET.get('sorgu_konum')
@@ -72,6 +104,17 @@ def countrykonum_view(request):
     return render(request,'page/search_types/countrykonum.html',context)
 
 def phonesearch_view(request):
+    if request.method=="POST":
+        contact=Contact()
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        subject=request.POST.get('subject')
+        contact.name=name
+        contact.email=email
+        contact.subject=subject
+        contact.save()
+        messages.success(request, "Form Başariyla Gönderildi")
+        return redirect('home_view')
     
     todos = Todo.objects.all()
 

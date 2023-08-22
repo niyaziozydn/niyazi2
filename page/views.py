@@ -21,6 +21,7 @@ def home_view(request):
         contact.subject=subject
         contact.save()
         messages.success(request, "Form Başariyla Gönderildi")
+        return redirect('home_view')
     todos = Todo.objects.all()
  
     
@@ -31,7 +32,7 @@ def home_view(request):
     sorgu = request.GET.get('sorgu')
     if sorgu:
         todos = todos.filter(
-            Q(title__icontains=sorgu) | Q(sehir__icontains=sorgu),  # icontains içinde geçen contains direk eşit olan 
+            Q(category__title__icontains=sorgu) | Q(sehir__icontains=sorgu),  # icontains içinde geçen contains direk eşit olan 
         ).distinct()
     else:
         paginator=Paginator(todos,8)
@@ -86,3 +87,33 @@ def category_detail(request, category_slug):
 
 
 
+def contact(request):
+    
+    if request.method=="POST":
+        contact=Contact()
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        subject=request.POST.get('subject')
+        contact.name=name
+        contact.email=email
+        contact.subject=subject
+        contact.save()
+        messages.success(request, "Form Başariyla Gönderildi")
+        return redirect('home_view')
+    
+    return render(request,'page/contactpage.html')
+
+
+def about_view(request):
+    if request.method=="POST":
+        contact=Contact()
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        subject=request.POST.get('subject')
+        contact.name=name
+        contact.email=email
+        contact.subject=subject
+        contact.save()
+        messages.success(request, "Form Başariyla Gönderildi")
+        return redirect('home_view')
+    return render(request,'page/about.html')

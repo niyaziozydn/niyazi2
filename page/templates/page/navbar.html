@@ -1,36 +1,26 @@
 {% load static %}
 
-<body id="about" class="inner_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
-    <!-- LOADER -->
-
-    <!-- END LOADER -->
-    <div class="wrapper">
-        <nav id="sidebar">
-            <div class="menu_section">
-                <ul>
-                    <li><a href="{% url 'home_view' %}">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="#anchor-name">Contact-Us</a></li>
-                </ul>
+<!-- Navbar Start -->
+<div class="container-fluid nav-bar bg-transparent">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+        <a href="{% url 'home_view' %}" class="navbar-brand d-flex align-items-center text-center">
+            <div class="icon p-2 me-2">
+                <img class="img-fluid" src="{% static 'img/icon-deal.png' %}" alt="Icon" style="width: 30px; height: 30px;">
             </div>
-        </nav>
-        <div id="content">
-            <!-- Start header -->
-            <header class="top-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="heading_main text_align_center margin-bottom_30 ">
-                                <h2>
-                                    <a href="{% url 'home_view' %}"><br>FIREEXPLORE</h2>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn"><img src="{% static 'images/menu_icon.png' %} "></button>
+            <h1 class="m-0 text-primary">FireXplore</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto">
+                <a href="{% url 'home_view'%}" class="nav-item nav-link active">Home</a>
+                <a href="{% url 'about_view' %}" class="nav-item nav-link">About</a>
 
-                        </div>
-                    </div>
-                </div>
-            </header>
+
+            </div>
+            <a href="{% url 'contact' %}" class="btn btn-primary px-3 d-none d-lg-flex">Contact</a>
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
